@@ -66,7 +66,6 @@ public class Filosofo implements Runnable {
                 } else {
                     System.out.println(codigo + " PENSANDO");
                     Thread.sleep(1000);
-                    
                 }
                 
             } catch (Exception e) {
