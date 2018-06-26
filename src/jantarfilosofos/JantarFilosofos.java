@@ -21,10 +21,9 @@ public class JantarFilosofos {
      */
     public static void main(String[] args) {
         
-        System.out.print("Digite o número de filosofos: ");
+        System.out.print("Digite o número de filósofos: ");
         int numeroFilosofos = new Scanner(System.in).nextInt();
         
-        List<Filosofo> listaFilosofos = new ArrayList<>();
         List<Semaphore> listaHashi = new ArrayList<>();
         
         System.out.println("Iniciando Jantar...");
@@ -36,12 +35,11 @@ public class JantarFilosofos {
         for (int i = 0; i < numeroFilosofos ; i++){
             
             if(i == numeroFilosofos - 1){
-                listaFilosofos.add(new Filosofo(i, listaHashi.get(i), listaHashi.get(0)));
+                new Thread(new Filosofo(i, listaHashi.get(i), listaHashi.get(0))).start();
             } else {
-                listaFilosofos.add(new Filosofo(i, listaHashi.get(i), listaHashi.get(i + 1)));
+                new Thread(new Filosofo(i, listaHashi.get(i), listaHashi.get(i+1))).start();
             }
             
-            new Thread(listaFilosofos.get(i)).start();
         }
         
     }

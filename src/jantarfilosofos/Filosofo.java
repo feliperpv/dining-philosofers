@@ -38,7 +38,7 @@ public class Filosofo implements Runnable {
                             System.out.println(codigo + " PEGOU ESQUERDO");
                             
                             extra.release();
-                            System.out.println(codigo + " LARGOU EXTRA");
+                            System.out.println(codigo + " POSSUI RECURSOS - LARGOU EXTRA");
                             
                             // Come
                             System.out.println(codigo + " COMENDO");
